@@ -1,4 +1,4 @@
-# 👥 HR Employee Attrition & Workforce Analytics Dashboard
+# 👥 HR Attrition & Workforce Analytics Dashboard
 
 An interactive **Power BI HR analytics solution** designed to analyze employee attrition, workforce composition, compensation, tenure, employee demographics, and department-level trends.
 
