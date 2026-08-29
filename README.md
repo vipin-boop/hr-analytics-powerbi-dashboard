@@ -6,7 +6,32 @@ The dashboard transforms employee-level HR data into actionable insights through
 
 ---
 
+## 📚 Data Source
+
+The raw HR dataset used in this project was obtained from **Kaggle**.
+
+**Dataset:** HR Attrition Messy Dataset
+**Source:** [Kaggle – HR Attrition Messy Dataset](https://www.kaggle.com/datasets/priyanshu1yadav/hr-atttrition-messy-dataset?utm_source=chatgpt.com)
+
+The original dataset was used as the raw data source and was subsequently **cleaned, transformed, structured, and modeled** for Power BI analysis.
+
+The data preparation process included:
+
+* Data cleaning and standardization
+* Handling data quality issues
+* Removing inconsistencies and preparing fields for analysis
+* Structuring the data into fact and dimension tables
+* Creating relationships between tables
+* Creating calculated fields and DAX measures
+* Preparing the data for interactive HR reporting
+
+> **Note:** The Kaggle dataset serves as the raw data source. The data model, transformations, DAX measures, dashboard design, and analytical reporting were developed as part of this project.
+
+---
+
 ## 📌 Dashboard Highlights
+
+The dashboard consists of **four interactive Power BI pages**, each designed for a specific analytical purpose.
 
 ### 🏠 Workforce Snapshot
 
@@ -23,7 +48,15 @@ The Home page provides a quick executive view of the organization's workforce th
 * Age-group distribution
 * Education-level distribution
 
-Interactive filters allow users to explore these metrics by **Date, Education, Job Title, Payment Method, and Region**.
+Interactive filters allow users to explore these metrics by:
+
+* Date
+* Education
+* Job Title
+* Payment Method
+* Region
+
+The page provides a high-level overview of the organization's workforce and allows users to quickly identify major workforce patterns.
 
 ---
 
@@ -43,13 +76,13 @@ Key analysis includes:
 * Attrition by job title
 * Attrition by performance rating
 
-This page makes it easier to identify departments and employee groups where turnover may require further investigation.
+This page helps identify departments, job roles, and employee groups where employee turnover may require further investigation.
 
 ---
 
 ### 🌍 Workforce Analysis
 
-The Workforce page provides a broader view of employee distribution and compensation.
+The Workforce page provides a broader view of employee distribution, tenure, job roles, and compensation.
 
 It explores:
 
@@ -58,6 +91,7 @@ It explores:
 * Workforce by job role
 * Workforce and compensation patterns
 * Department-level workforce comparisons
+* Salary distribution across employee groups
 
 The combination of workforce and compensation analysis provides a more complete picture of how employees are distributed throughout the organization.
 
@@ -76,7 +110,9 @@ Users can filter and explore individual employee records using:
 * Payment Method
 * Date
 
-The employee directory also supports **drill-through analysis**, allowing users to move from an employee record into a more focused employee-level view.
+The employee directory also supports **drill-through analysis**, allowing users to select an employee and navigate to a more focused employee-level view.
+
+This page is designed for detailed employee exploration while keeping the main dashboard pages focused on analytical insights.
 
 ---
 
@@ -101,6 +137,24 @@ Stores the central employee attrition and workforce-related analytical data.
 * **`Dim_Date`** — Date-based analysis
 
 This structure separates descriptive attributes from analytical data and supports consistent filtering across dashboard pages.
+
+### Data Model Structure
+
+```text
+                    Dim_Date
+                       │
+                       │
+Dim_Department ───┐    │    ┌─── Dim_Job_Title
+                  │    │    │
+Dim_Education ────┤    │    ├─── Dim_Region
+                  │    │    │
+Dim_Employee ─────┤    │    ├─── Dim_Payment_Method
+                  │    │    │
+                  └────┼────┘
+                       │
+                       ▼
+              Fact_Employee_Attrition
+```
 
 ---
 
@@ -129,6 +183,7 @@ The dashboard tracks several core workforce indicators:
 * **Microsoft Excel** — Source data preparation
 * **Data Modeling** — Fact and dimension architecture
 * **Git & GitHub** — Project version control
+* **Kaggle** — Original dataset source
 
 ---
 
@@ -148,6 +203,7 @@ The dashboard demonstrates several Power BI capabilities:
 * Geographic mapping
 * Employee-level tabular analysis
 * Dynamic filtering across dimensions
+* Interactive dashboard navigation
 
 ---
 
@@ -155,19 +211,25 @@ The dashboard demonstrates several Power BI capabilities:
 
 The project follows a complete analytics workflow:
 
-**Raw HR Data**
-↓
-**Data Cleaning & Preparation**
-↓
-**Data Modeling**
-↓
-**Dimension & Fact Relationships**
-↓
-**DAX Measures**
-↓
-**Interactive Visualizations**
-↓
-**HR Insights & Analysis**
+```text
+Raw HR Dataset
+      ↓
+Data Cleaning & Preparation
+      ↓
+Data Transformation
+      ↓
+Fact & Dimension Modeling
+      ↓
+Table Relationships
+      ↓
+DAX Measures & KPIs
+      ↓
+Interactive Visualizations
+      ↓
+HR Insights & Analysis
+```
+
+The objective is to transform raw employee data into an interactive business intelligence solution that can support workforce and attrition analysis.
 
 ---
 
@@ -183,6 +245,8 @@ This dashboard can support HR teams in:
 * Examining relationships between satisfaction, performance, and attrition
 * Investigating individual employee records
 * Supporting data-driven workforce planning
+* Identifying workforce distribution patterns
+* Monitoring employee-related KPIs
 
 ---
 
@@ -208,6 +272,32 @@ HR-Employee-Attrition-Analysis/
 
 ---
 
+## 🖼️ Dashboard Preview
+
+### 🏠 Workforce Snapshot
+
+![Workforce Snapshot](Images/Home.png)
+
+---
+
+### 📉 Attrition Analysis
+
+![Attrition Analysis](Images/Attrition.png)
+
+---
+
+### 🌍 Workforce Analysis
+
+![Workforce Analysis](Images/Workforce.png)
+
+---
+
+### 👤 Employee Directory
+
+![Employee Directory](Images/Employees.png)
+
+---
+
 ## 🚀 Future Enhancements
 
 Potential extensions for the dashboard include:
@@ -220,13 +310,34 @@ Potential extensions for the dashboard include:
 * Additional employee satisfaction analysis
 * Advanced DAX-driven HR KPIs
 * Predictive analytics using machine learning
+* Employee risk scoring
+* Automated HR alerts
 
 ---
 
-## 🎓 Project Focus
 
-This project demonstrates an end-to-end **Business Intelligence and Data Analytics workflow**, covering:
+## 👨‍💻 Project Skills Demonstrated
 
-**Data Preparation → Data Modeling → DAX → Visualization → Interactive Reporting → Business Analysis**
+This project demonstrates practical experience in:
 
-The final dashboard provides a single analytical environment for exploring **workforce structure, employee compensation, tenure, and attrition** at both organizational and individual levels.
+* Data Cleaning
+* Data Transformation
+* Data Modeling
+* Star Schema Design
+* Power Query
+* DAX
+* KPI Development
+* Data Visualization
+* Interactive Dashboard Design
+* Drill-through Analysis
+* Business Intelligence
+* HR Analytics
+* Git & GitHub
+
+---
+
+## 📌 Disclaimer
+
+This project is created for **educational, portfolio, and analytical purposes**. The dataset is sourced from Kaggle and is used to demonstrate data preparation, modeling, visualization, and business intelligence techniques.
+
+**Original Dataset:** [HR Attrition Messy Dataset – Kaggle](https://www.kaggle.com/datasets/priyanshu1yadav/hr-atttrition-messy-dataset?utm_source=chatgpt.com)
