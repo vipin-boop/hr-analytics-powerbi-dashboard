@@ -89,9 +89,8 @@ It explores:
 * Workforce distribution across regions
 * Employee tenure distribution
 * Workforce by job role
-* Workforce and compensation patterns
-* Department-level workforce comparisons
-* Salary distribution across employee groups
+* Workforce and compensation 
+
 
 The combination of workforce and compensation analysis provides a more complete picture of how employees are distributed throughout the organization.
 
